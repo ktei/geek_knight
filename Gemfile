@@ -4,9 +4,12 @@ gem 'sinatra'
 gem 'sinatra-contrib'
 gem "activerecord"
 gem "sinatra-activerecord"
+gem 'rack-flash3'
+gem 'sinatra-partial'
 
 group :development do
   gem 'sqlite3'
+  gem 'debugger'
 end
 
 group :production do

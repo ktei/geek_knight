@@ -1,0 +1,23 @@
+<h3>Memo</h3>
+<ul class="breadcrumbs">
+  <li class="current"><a href="#">Folders</a></li>
+   <li><a href="<%= new_memo_folder_path %>"><i class="icon-plus"></i></a></li>
+</ul>
+<% if @folders.any? %>
+  <table width="100%">
+    <tbody>
+      <% @folders.each do |f| %>
+        <tr>
+          <td>
+            <i class="icon-folder-close"></i>
+            <a href="<%= memo_folders_path f.id %>"><%= f.name %></a>
+          </td>
+        <tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="alert-box secondary">
+    No folders can be found. <a href="<%= new_memo_folder_path %>">Create a folder</a> now.
+  </div>
+<% end %>

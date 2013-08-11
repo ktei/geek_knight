@@ -3,41 +3,93 @@
 
 // This includes all of the foundation global elements that are needed to work with any of the other files.
 @import "foundation/variables";
+@import "settings";
 
 // Foundation Components
 @import
-  "foundation/components/global",
-  "foundation/components/grid",
-  "foundation/components/visibility",
-  "foundation/components/block-grid",
-  "foundation/components/type",
-  "foundation/components/buttons",
-  "foundation/components/forms",
-  "foundation/components/button-groups",
-  "foundation/components/dropdown-buttons",
-  "foundation/components/split-buttons",
-  "foundation/components/flex-video",
-  "foundation/components/section",
-  "foundation/components/top-bar",
-  "foundation/components/orbit",
-  "foundation/components/reveal",
-  "foundation/components/joyride",
-  "foundation/components/clearing",
-  "foundation/components/alert-boxes",
-  "foundation/components/breadcrumbs",
-  "foundation/components/custom-forms",
-  "foundation/components/keystrokes",
-  "foundation/components/labels",
-  "foundation/components/inline-lists",
-  "foundation/components/pagination",
-  "foundation/components/panels",
-  "foundation/components/pricing-tables",
-  "foundation/components/progress-bars",
-  "foundation/components/side-nav",
-  "foundation/components/sub-nav",
-  "foundation/components/switch",
-  "foundation/components/magellan",
-  "foundation/components/tables",
-  "foundation/components/thumbs",
-  "foundation/components/tooltips",
-  "foundation/components/dropdown";
+"foundation/components/global",
+"foundation/components/grid",
+"foundation/components/visibility",
+"foundation/components/block-grid",
+"foundation/components/type",
+"foundation/components/buttons",
+"foundation/components/forms",
+"foundation/components/button-groups",
+"foundation/components/dropdown-buttons",
+"foundation/components/split-buttons",
+"foundation/components/flex-video",
+"foundation/components/section",
+"foundation/components/top-bar",
+"foundation/components/orbit",
+"foundation/components/reveal",
+"foundation/components/joyride",
+"foundation/components/clearing",
+"foundation/components/alert-boxes",
+"foundation/components/breadcrumbs",
+"foundation/components/custom-forms",
+"foundation/components/keystrokes",
+"foundation/components/labels",
+"foundation/components/inline-lists",
+"foundation/components/pagination",
+"foundation/components/panels",
+"foundation/components/pricing-tables",
+"foundation/components/progress-bars",
+"foundation/components/side-nav",
+"foundation/components/sub-nav",
+"foundation/components/switch",
+"foundation/components/magellan",
+"foundation/components/tables",
+"foundation/components/thumbs",
+"foundation/components/tooltips",
+"foundation/components/dropdown";
+@import "mixins";
+
+body {
+  background-color:#000;
+  background-repeat: no-repeat;
+  background-position: -150px 0%;
+  background-image:url('../../assets/img/bg.jpg');
+}
+
+footer {
+  background-color:$primary-color;
+  padding: 15px;
+  color: #fff;
+}
+
+.top-bar { 
+  .title-area {
+    h1 > a {
+      color: #fff;
+      &:hover { color: #000; }
+    }
+  }
+  .top-bar-section > ul {
+    & > li:hover a {
+      background: #000;
+      color:#fff;
+    }
+  }
+}
+
+.content {
+  padding: 15px;
+  background-color:#fff;
+  border:none;
+  opacity: 0.95;
+  min-height: 650px;
+}
+
+.pull-right {
+  float:right
+}
+
+.alert-box {
+  &.notice {
+    background-color:$notice-color;
+  }
+  ul {
+    margin:0;
+    font-weight: normal;
+  }
+}

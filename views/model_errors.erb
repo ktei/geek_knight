@@ -1,0 +1,10 @@
+<% if request.request_method == 'POST' and not m.valid? %>
+  <div data-alert class="alert-box alert">
+    <strong>Oops, there were some problems...</strong>
+    <ul>
+      <% m.errors.each do |key, value| %>
+        <li><%= "#{key} #{value}." %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
