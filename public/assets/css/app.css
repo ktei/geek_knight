@@ -4697,7 +4697,7 @@ footer {
   background: #000;
   color: #fff; }
 
-.content {
+#container {
   padding: 15px;
   background-color: #fff;
   border: none;
@@ -4712,3 +4712,43 @@ footer {
 .alert-box ul {
   margin: 0;
   font-weight: normal; }
+
+.note .title {
+  font-style: italic;
+  margin-bottom: 5px; }
+.note .content {
+  padding: 10px;
+  font-size: 14px; }
+  .note .content pre {
+    white-space: pre-wrap;
+    /* css-3 */
+    white-space: -moz-pre-wrap;
+    /* Mozilla, since 1999 */
+    white-space: -pre-wrap;
+    /* Opera 4-6 */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    word-wrap: break-word;
+    /* Internet Explorer 5.5+ */ }
+
+pre {
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
+
+textarea {
+  resize: vertical;
+  height: 100px; }
+  textarea.small {
+    height: 50px; }
+    @media only screen and (min-width: 1280px) {
+      textarea.small {
+        height: 100px; } }
+  textarea.medium {
+    height: 100px; }
+    @media only screen and (min-width: 1280px) {
+      textarea.medium {
+        height: 200px; } }
+  textarea.large {
+    height: 150px; }
+    @media only screen and (min-width: 1280px) {
+      textarea.large {
+        height: 400px; } }

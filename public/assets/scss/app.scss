@@ -72,7 +72,7 @@ footer {
   }
 }
 
-.content {
+#container {
   padding: 15px;
   background-color:#fff;
   border:none;
@@ -91,5 +91,46 @@ footer {
   ul {
     margin:0;
     font-weight: normal;
+  }
+}
+
+.note {
+  .title {
+    font-style: italic;
+    margin-bottom: 5px;
+  }
+  .content {
+    padding: 10px;
+    font-size: 14px;
+    pre {
+      @include wrap
+    }
+  }
+}
+
+pre {
+  font-family: $body-font-family;
+}
+
+textarea {
+  resize:vertical;
+  height:100px;
+  &.small {
+    height:50px;
+    @media #{$medium} {
+      height:100px;
+    }
+  }
+  &.medium {
+    height:100px;
+    @media #{$medium} {
+      height:200px;
+    }
+  }
+  &.large {
+    height:150px;
+    @media #{$medium} {
+      height:400px;
+    }
   }
 }

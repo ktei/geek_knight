@@ -2,5 +2,21 @@
 <ul class="breadcrumbs">
   <li><a href="<%= memo_path %>">Folders</a></li>
   <li class="current"><a href="#"><%= @folder.name %></a></li>
-  <li><a href="#"><i class="icon-plus"></i></a></li>
+  <li><a href="<%= new_memo_note_path @folder.id %>"><i class="icon-plus"></i></a></li>
 </ul>
+<div class="row">
+  <div class="small-12 columns">
+    <% if @folder.memo_notes.any? %>
+      <% @folder.memo_notes.each do |note| %>
+        <div class="note">
+          <div class="title">
+            <strong><%= note.name %></strong>
+          </div>
+          <div class="panel content">
+            <pre><%= note.content %></pre>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

@@ -10,12 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130811085932) do
+ActiveRecord::Schema.define(version: 20130811132909) do
 
   create_table "memo_folders", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "memo_notes", force: true do |t|
+    t.string   "name"
+    t.integer  "memo_folder_id"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "memo_notes", ["memo_folder_id"], name: "index_memo_notes_on_memo_folder_id"
 
 end

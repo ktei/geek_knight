@@ -20,6 +20,14 @@ module LinkHelper
     '/protected/memo/folders/new'
   end
 
+  def memo_notes_path(folder_id)
+    "/protected/memo/#{folder_id}/notes"
+  end
+
+  def new_memo_note_path(folder_id)
+    "/protected/memo/#{folder_id}/notes/new"
+  end
+
   def signin_path
     '/signin'
   end
