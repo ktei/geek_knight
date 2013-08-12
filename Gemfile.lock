@@ -20,13 +20,6 @@ GEM
     atomic (1.1.12)
     backports (3.3.3)
     builder (3.1.4)
-    columnize (0.3.6)
-    debugger (1.6.1)
-      columnize (>= 0.3.1)
-      debugger-linecache (~> 1.2.0)
-      debugger-ruby_core_source (~> 1.2.3)
-    debugger-linecache (1.2.0)
-    debugger-ruby_core_source (1.2.3)
     eventmachine (1.0.3-x86-mingw32)
     haml (4.0.3)
       tilt
@@ -68,7 +61,6 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
-  debugger
   haml
   multi_json
   pg

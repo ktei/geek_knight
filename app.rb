@@ -6,7 +6,7 @@ require 'sinatra/partial'
 require 'active_record'
 require "sinatra/activerecord"
 require 'rack-flash'
-require 'debugger'
+#require 'debugger'
 
 # require helpers
 Dir["./helpers/*.rb"].each { |file| require file }

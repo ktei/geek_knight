@@ -10,7 +10,7 @@ gem 'haml'
 
 group :development do
   gem 'sqlite3'
-  gem 'debugger'
+  #gem 'debugger'
 end
 
 group :production do
