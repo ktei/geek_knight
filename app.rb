@@ -1,5 +1,5 @@
 require "sinatra/base"
-require 'Haml'
+require 'haml'
 require 'sinatra/reloader'
 require "sinatra/config_file"
 require 'sinatra/partial'
