@@ -1,6 +1,6 @@
 class App < Sinatra::Base
   get '/blog/?' do
     @title = 'Blog'
-    erb :'blog/index'
+    haml :'blog/index'
   end
 end

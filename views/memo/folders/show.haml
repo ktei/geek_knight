@@ -1,0 +1,19 @@
+%h3= @folder.name
+%ul.breadcrumbs
+  %li
+    %a{href: "#{memo_path}"}Folders
+  %li.current
+    %a{href: "#"}=@folder.name
+  %li
+    %a{href: "#{new_memo_note_path @folder.id}"}
+      %i.icon-plus
+.row
+  .columns.small-12
+    - if @folder.memo_notes.any?
+      - @folder.memo_notes.each do |note|
+        .note
+          .title
+            %strong= note.name
+          .panel.content
+            %pre= note.content
+

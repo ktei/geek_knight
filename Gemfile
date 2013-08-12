@@ -6,6 +6,7 @@ gem "activerecord"
 gem "sinatra-activerecord"
 gem 'rack-flash3'
 gem 'sinatra-partial'
+gem 'haml'
 
 group :development do
   gem 'sqlite3'

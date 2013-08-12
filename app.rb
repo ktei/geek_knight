@@ -1,4 +1,5 @@
 require "sinatra/base"
+require 'Haml'
 require 'sinatra/reloader'
 require "sinatra/config_file"
 require 'sinatra/partial'
@@ -20,7 +21,7 @@ class App < Sinatra::Base
   end
   register Sinatra::ActiveRecordExtension, Sinatra::ConfigFile, Sinatra::Partial
   config_file 'config/global.yml'
-  set :partial_template_engine, :erb
+  #set :partial_template_engine, :erb
 
   # session and flash
   enable :sessions
@@ -36,7 +37,7 @@ class App < Sinatra::Base
 
   get '/' do
     @title = 'Welcome!'
-    erb :index
+    haml :index
   end
 
   # include all modules

@@ -1,0 +1,6 @@
+- if request.request_method == 'POST' and not m.valid?
+  .alert-box.alert{data: {alert: ''}}
+    %strong Oops, there were some problems...
+    %ul
+      - m.errors.each do |key, value|
+        %li= "#{key} #{value}."

@@ -1,0 +1,22 @@
+%nav.top-bar
+  %ul.title-area
+    %li.name
+      %h1
+        %a{href: "#{root_path}"}
+          = "#{settings.site_name}"
+    %li.toggle-topbar.menu-icon
+      %a{href: "#"}
+        %span
+
+  %section.top-bar-section
+    %ul.left
+      %li
+        %a{href: "#{root_path}"}Home
+      %li
+        %a{href: "#{blog_path}"}Blog
+      %li
+        %a{href: "#{memo_path}"}Memo
+    - if signed_in?
+      %ul.right
+        %li
+          %a{href: "#{signout_path}"}Sign out

@@ -2,13 +2,13 @@ class App < Sinatra::Base
   get '/protected/memo/?' do
     @title = 'Memo'
     @folders = MemoFolder.order("name").all
-    erb :'memo/index'
+    haml :'memo/index'
   end
 
   get '/protected/memo/folders/new/?' do
     @title = 'New folder'
     @folder = MemoFolder.new
-    erb :'memo/folders/new'
+    haml :'memo/folders/new'
   end
 
   post '/protected/memo/folders/?' do
@@ -18,21 +18,21 @@ class App < Sinatra::Base
       @folder.save
       redirect memo_path
     else
-      erb :'memo/folders/new'
+      haml :'memo/folders/new'
     end
   end
 
   get '/protected/memo/folders/:id/?' do
     @folder = MemoFolder.find(params[:id])
     @title = @folder.name
-    erb :'memo/folders/show'
+    haml :'memo/folders/show'
   end
 
   get '/protected/memo/:folder_id/notes/new/?' do
     @folder = MemoFolder.find(params[:folder_id])
     @note = MemoNote.new
     @title = 'Create note'
-    erb :'memo/notes/new'
+    haml :'memo/notes/new'
   end
 
   post '/protected/memo/:folder_id/notes/?' do
@@ -43,7 +43,7 @@ class App < Sinatra::Base
       redirect memo_folders_path params[:folder_id]
     else
       @folder = MemoFolder.find(params[:folder_id])
-      erb :'memo/notes/new'
+      haml :'memo/notes/new'
     end
   end
 

@@ -27,8 +27,9 @@ GEM
       debugger-ruby_core_source (~> 1.2.3)
     debugger-linecache (1.2.0)
     debugger-ruby_core_source (1.2.3)
-    eventmachine (1.0.3)
     eventmachine (1.0.3-x86-mingw32)
+    haml (4.0.3)
+      tilt
     i18n (0.6.4)
     minitest (4.7.5)
     multi_json (1.7.8)
@@ -56,7 +57,6 @@ GEM
       tilt (~> 1.3)
     sinatra-partial (0.4.0)
       sinatra
-    sqlite3 (1.3.7)
     sqlite3 (1.3.7-x86-mingw32)
     thread_safe (0.1.2)
       atomic
@@ -69,6 +69,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   debugger
+  haml
   multi_json
   pg
   rack-flash3

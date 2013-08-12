@@ -1,0 +1,32 @@
+%html
+  %head
+    %title= "#{@title} | #{settings.site_name}"
+    %link{href: "/assets/css/app.css", rel: "stylesheet"}/
+    %link{href: "/assets/css/font-awesome.css", rel: "stylesheet"}/
+    %script{src: "/assets/js/jquery-1.9.1.min.js"}
+    %script{src: "/assets/js/foundation.min.js"}
+    :javascript
+      $(function() {
+        $(document).foundation();
+      });
+  %body
+    %header
+      .row
+        .columns.small-12
+          = haml :header
+    .row
+      .columns.small-12
+        #container
+          - [:notice, :error, :success].each do |key|
+            - if not flash[key].nil?
+              %div{data: {alert: ''}, class: "alert-box #{style_by_flash_key(key)}"}
+                = flash[key]
+                %a.close{href: "#"} &times;
+          = yield
+          - if ENV['RACK_ENV'] == 'development'
+            <h5>params:</h5>
+            %pre= params.to_yaml
+
+    .row
+      .columns.small-12
+        = haml :footer

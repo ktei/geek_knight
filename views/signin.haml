@@ -1,0 +1,11 @@
+.row
+  .small-12.large-7.large-centered.columns
+    %h3 Sign in
+    %form{action: "#{signin_path}", method: "POST"}
+      .row
+        .small-12.columns
+          %label Password
+          %input{type: "password", name:"password", placeholder:"Don't you know?"}
+      .row
+        .small-12.columns
+          %input.button.pull-right{type: "submit", value:"Sign in"}

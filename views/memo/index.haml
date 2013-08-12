@@ -1,0 +1,21 @@
+%h3 Memo
+%ul.breadcrumbs
+  %li.current
+    %a{href: "#"}Folders
+  %li
+    %a{href: "#{new_memo_folder_path}"} 
+      %i.icon-plus
+- if @folders.any?
+  %table{width: "100%"}
+    %tbody
+      - @folders.each do |f|
+        %tr
+          %td
+            %i.icon-folder-close
+            %a{href: "#{memo_folders_path f.id}"}= f.name
+- else
+  .alert-box.secondary
+    No folders can be found. 
+    %a{href: "#{new_memo_folder_path}"} Create a folder
+    now.
+  

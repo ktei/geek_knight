@@ -1,0 +1,25 @@
+%h3 Create note
+%ul.breadcrumbs
+  %li
+    %a{href: "#{memo_path}"}Folders
+  %li
+    %a{href: "#{memo_folders_path @folder.id}"}= @folder.name
+  %li.current
+    %a{href: "#"}Create note
+- partial(:'model_errors', :locals => { m: @note})
+%form{action: "#{memo_notes_path @folder.id}", method: "POST"}
+  .row
+    .columns.small-12
+      %label Name
+      %input{type: "text", name: "note[name]", placeholder: "Give me a name", value: @note.name}
+  .row
+    .columns.small-12
+      %label Content
+      %textarea.medium{name: "note[content]", placeholder: "Write some content...", value: @note.content}
+  .row
+    .columns.small-12
+      %ul.button-group.pull-right
+        %li
+          %input.button{type: "submit", value: "Create"}
+        %li
+          %a.button.secondary{href: "#{memo_folders_path @folder.id}"} Cancel

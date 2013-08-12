@@ -2,7 +2,7 @@ class App < Sinatra::Base
 
   get '/signin/?' do
     @title = 'Sign in'
-    erb :signin
+    haml :signin
   end
 
   post '/signin/?' do
@@ -11,7 +11,7 @@ class App < Sinatra::Base
       redirect_back_or root_path
     else
       flash.now[:error] = "The password is wrong. You need to do better."
-      erb :signin
+      haml :signin
     end
   end
 
