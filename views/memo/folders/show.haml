@@ -17,12 +17,10 @@
             %form{method: "POST", action: "#{destroy_note_path note.id}"}
               %a.pull-right{href: "#", data: {link_type: 'delete'}}
                 %i.icon-trash
+              %a.pull-right{href: "#", style: "margin-right:5px"}
+                %i.icon-pencil
           .panel.content
             %pre= note.content
-:javascript
-  $(function() {
-    $('a[data-link-type=delete]').click(function() {
-      $(this).parent().submit();
-    });
-  });
+    - else
+      = alert_box('No note can be found.', :secondary)
 

@@ -1,10 +1,11 @@
 %html
   %head
     %title= "#{@title} | #{settings.site_name}"
-    %link{href: "/assets/css/app.css", rel: "stylesheet"}/
-    %link{href: "/assets/css/font-awesome.css", rel: "stylesheet"}/
-    %script{src: "/assets/js/jquery-1.9.1.min.js"}
-    %script{src: "/assets/js/foundation.min.js"}
+    = css('app')
+    = css('font-awesome')
+    = js('jquery-1.9.1.min', 'vendor')
+    = js('foundation.min', 'vendor')
+    = js('shared')
     :javascript
       $(function() {
         $(document).foundation();
@@ -19,9 +20,7 @@
         #container
           - [:notice, :error, :success].each do |key|
             - if not flash[key].nil?
-              %div{data: {alert: ''}, class: "alert-box #{style_by_flash_key(key)}"}
-                = flash[key]
-                %a.close{href: "#"} &times;
+              = alert_box(flash[key], key, true)
           = yield
           - if ENV['RACK_ENV'] == 'development'
             <h5>params:</h5>

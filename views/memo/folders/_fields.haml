@@ -1,0 +1,8 @@
+= partial(:'shared/model_errors', :locals => { m: folder})
+.row
+  .columns.small-12
+    %label Name
+    %input{type: "text", placeholder: "Give me a name", name: "folder[name]", value: folder.name}
+.row
+  .columns.small-12
+    %input.button.pull-right{type: "submit", value: verb}

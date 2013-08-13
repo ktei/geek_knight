@@ -35,7 +35,7 @@ class App < Sinatra::Base
   use Rack::Flash
 
   # register helpers
-  helpers LinkHelper, HtmlHelper, SessionsHelper
+  helpers LinkHelper, HamlHelper, SessionsHelper
 
   # filter
   before '/protected/*' do

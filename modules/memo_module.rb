@@ -51,6 +51,7 @@ class App < Sinatra::Base
   post '/protected/memo/note/destroy/:id/?' do
     @note = MemoNote.find(params[:id])
     @note.destroy
+    flash[:notice] = "Note '#{@note.name}' has been deleted."
     redirect memo_folders_path(@note.memo_folder.id)
   end
 

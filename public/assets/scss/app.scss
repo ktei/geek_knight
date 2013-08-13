@@ -88,6 +88,9 @@ footer {
   &.notice {
     background-color:$notice-color;
   }
+  &.error {
+    background-color:$alert-color;
+  }
   ul {
     margin:0;
     font-weight: normal;

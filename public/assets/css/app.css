@@ -4709,6 +4709,8 @@ footer {
 
 .alert-box.notice {
   background-color: #2ba6cb; }
+.alert-box.error {
+  background-color: #c60f13; }
 .alert-box ul {
   margin: 0;
   font-weight: normal; }
