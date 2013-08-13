@@ -6,7 +6,7 @@
     %a{href: "#{memo_folders_path @folder.id}"}= @folder.name
   %li.current
     %a{href: "#"}Create note
-- partial(:'model_errors', :locals => { m: @note})
+= partial(:'shared/model_errors', :locals => { m: @note})
 %form{action: "#{memo_notes_path @folder.id}", method: "POST"}
   .row
     .columns.small-12

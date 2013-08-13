@@ -6,7 +6,6 @@ require 'sinatra/partial'
 require 'active_record'
 require "sinatra/activerecord"
 require 'rack-flash'
-#require 'debugger'
 
 # require helpers
 Dir["./helpers/*.rb"].each { |file| require file }
@@ -21,7 +20,15 @@ class App < Sinatra::Base
   end
   register Sinatra::ActiveRecordExtension, Sinatra::ConfigFile, Sinatra::Partial
   config_file 'config/global.yml'
-  #set :partial_template_engine, :erb
+
+  # sinatra partial template engine settings
+  enable :partial_underscores
+
+  # hide exception details for users and show them friendly error page
+  configure :production do
+    set :raise_errors, false
+    set :show_exceptions, false
+  end
 
   # session and flash
   enable :sessions
@@ -38,6 +45,14 @@ class App < Sinatra::Base
   get '/' do
     @title = 'Welcome!'
     haml :index
+  end
+
+  not_found do
+    haml :not_found
+  end
+
+  error do
+    haml :error
   end
 
   # include all modules

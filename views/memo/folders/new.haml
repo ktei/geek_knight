@@ -4,7 +4,7 @@
     %a{href: "#{memo_path}"}Folders
   %li.current
     %a.current{href: "#"}Create folder
-- partial(:'model_errors', :locals => { m: @folder})
+= partial(:'shared/model_errors', :locals => { m: @folder})
 %form{action: "#{memo_folders_path}", method: "POST"}
   .row
     .columns.small-12

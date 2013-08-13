@@ -98,6 +98,10 @@ footer {
   .title {
     font-style: italic;
     margin-bottom: 5px;
+    @include wrap;
+    form {
+      display: inline;
+    }
   }
   .content {
     padding: 10px;

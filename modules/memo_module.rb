@@ -37,7 +37,8 @@ class App < Sinatra::Base
 
   post '/protected/memo/:folder_id/notes/?' do
     @title = 'Create note'
-    @note = MemoNote.new(params[:note].merge({ :memo_folder_id => params[:folder_id] }))
+    @folder = MemoFolder.find(params[:folder_id])
+    @note = @folder.memo_notes.build(params[:note])
     if @note.valid?
       @note.save
       redirect memo_folders_path params[:folder_id]
@@ -45,6 +46,12 @@ class App < Sinatra::Base
       @folder = MemoFolder.find(params[:folder_id])
       haml :'memo/notes/new'
     end
+  end
+
+  post '/protected/memo/note/destroy/:id/?' do
+    @note = MemoNote.find(params[:id])
+    @note.destroy
+    redirect memo_folders_path(@note.memo_folder.id)
   end
 
 end

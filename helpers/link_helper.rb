@@ -28,6 +28,10 @@ module LinkHelper
     "/protected/memo/#{folder_id}/notes/new"
   end
 
+  def destroy_note_path(id)
+    "/protected/memo/note/destroy/#{id}"
+  end
+
   def signin_path
     '/signin'
   end
