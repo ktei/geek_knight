@@ -6,11 +6,12 @@
 .row
   .columns.small-12
     %label Content
-    %textarea.medium{name: "note[content]", placeholder: "Write some content...", value: note.content}
+    %textarea.medium{name: "note[content]", placeholder: "Write some content..."}
+      = note.content
 .row
   .columns.small-12
     %ul.button-group.pull-right
       %li
         %input.button{type: "submit", value: verb}
       %li
-        %a.button.secondary{href: "#{memo_folders_path @folder.id}"} Cancel
+        %a.button.secondary{href: show_memo_folder_path(@folder.id)} Cancel

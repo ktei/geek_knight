@@ -1,11 +1,11 @@
 %h3= @folder.name
 %ul.breadcrumbs
   %li
-    %a{href: "#{memo_path}"}Folders
+    %a{href: memo_path}Folders
   %li.current
     %a{href: "#"}=@folder.name
   %li
-    %a{href: "#{new_memo_note_path @folder.id}"}
+    %a{href: new_memo_note_path(@folder.id)}
       %i.icon-plus
 .row
   .columns.small-12
@@ -14,10 +14,11 @@
         .note
           .title
             %strong= note.name
-            %form{method: "POST", action: "#{destroy_note_path note.id}"}
+            %form{method: "POST", action: destroy_memo_note_path}
+              %input{type: "hidden", value: note.id, name: "id"}
               %a.pull-right{href: "#", data: {link_type: 'delete'}}
                 %i.icon-trash
-              %a.pull-right{href: "#", style: "margin-right:5px"}
+              %a.pull-right{href: update_memo_note_path(note.id), style: "margin-right:5px"}
                 %i.icon-pencil
           .panel.content
             %pre= note.content

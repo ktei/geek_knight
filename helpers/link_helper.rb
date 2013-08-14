@@ -11,25 +11,35 @@ module LinkHelper
     '/protected/memo'
   end
 
-  def memo_folders_path(id = nil)
-    return '/protected/memo/folders' if id.nil?
-    "/protected/memo/folders/#{id}"
+  def show_memo_folder_path(id)
+    "/protected/memo/folders/show/#{id}"
+  end
+
+  def update_memo_folder_path(id = nil)
+    return '/protected/memo/folders/update' if id.nil?
+    "/protected/memo/folders/update/#{id}"
   end
 
   def new_memo_folder_path
     '/protected/memo/folders/new'
   end
 
-  def memo_notes_path(folder_id)
-    "/protected/memo/#{folder_id}/notes"
+  def destroy_memo_folder_path
+    '/protected/memo/folders/destroy'
   end
+
 
   def new_memo_note_path(folder_id)
     "/protected/memo/#{folder_id}/notes/new"
   end
 
-  def destroy_note_path(id)
-    "/protected/memo/note/destroy/#{id}"
+  def update_memo_note_path(id = nil)
+    return '/protected/memo/notes/update' if id.nil?
+    "/protected/memo/notes/update/#{id}"
+  end
+
+  def destroy_memo_note_path
+    "/protected/memo/notes/destroy"
   end
 
   def signin_path

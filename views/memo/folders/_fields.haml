@@ -5,4 +5,8 @@
     %input{type: "text", placeholder: "Give me a name", name: "folder[name]", value: folder.name}
 .row
   .columns.small-12
-    %input.button.pull-right{type: "submit", value: verb}
+    %ul.button-group.pull-right
+      %li
+        %input.button.pull-right{type: "submit", value: verb}
+      %li
+        %a.button.secondary{href: memo_path } Cancel

@@ -1,8 +1,8 @@
 %h3 Create folder
 %ul.breadcrumbs
   %li
-    %a{href: "#{memo_path}"}Folders
+    %a{href: memo_path}Folders
   %li.current
-    %a.current{href: "#"}Create folder
-%form{action: "#{memo_folders_path}", method: "POST"}
+    %a.current{href: "#"}Create
+%form{action: new_memo_folder_path, method: "POST"}
   = partial(:'memo/folders/fields', :locals => { folder: @folder, verb: 'Create' })

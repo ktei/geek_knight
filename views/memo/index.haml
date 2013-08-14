@@ -8,16 +8,18 @@
 - if @folders.any?
   %table{width: "100%"}
     %tbody
-      - @folders.each do |f|
+      - @folders.each do |folder|
         %tr
           %td
             %i.icon-folder-close
-            %a{href: "#{memo_folders_path f.id}"}= f.name
+            %a{href: "#{show_memo_folder_path folder.id}"}= folder.name
           %td{style: "width:70px"}
-            %a{href: "#", style: "margin-right: 5px"}
+            %a{href: "#{update_memo_folder_path folder.id}", style: "margin-right: 5px"}
               %i.icon-pencil
-            %a{href: "#"}
-              %i.icon-trash
+            %form{method: "POST", action: "#{destroy_memo_folder_path}"}
+              %input{type: "hidden", value: "#{folder.id}", name: "id"}
+              %a{href: "#", data: {link_type: 'delete'}}
+                %i.icon-trash
 - else
   .alert-box.secondary
     No folders can be found. 

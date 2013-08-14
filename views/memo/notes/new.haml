@@ -1,10 +1,11 @@
 %h3 Create note
 %ul.breadcrumbs
   %li
-    %a{href: "#{memo_path}"}Folders
+    %a{href: memo_path}Folders
   %li
-    %a{href: "#{memo_folders_path @folder.id}"}= @folder.name
+    %a{href: show_memo_folder_path(@folder.id)}= @folder.name
   %li.current
-    %a{href: "#"}Create note
-%form{action: "#{memo_notes_path @folder.id}", method: "POST"}
+    %a{href: "#"}Create
+%form{action: new_memo_note_path(@folder.id), method: "POST"}
+  %input{type: "hidden", value: @folder.id, name: "folder_id"}
   = partial(:'memo/notes/fields', :locals => { note: @note, verb: 'Create' })

@@ -1,0 +1,11 @@
+%h3 Edit note
+%ul.breadcrumbs
+  %li
+    %a{href: memo_path}Folders
+  %li
+    %a{href: show_memo_folder_path(@folder.id)}= @folder.name
+  %li.current
+    %a{href: "#"}Edit
+%form{action: update_memo_note_path, method: "POST"}
+  %input{type: "hidden", value: @note.id, name: "id"}
+  = partial(:'memo/notes/fields', :locals => { note: @note, verb: 'Save' })
