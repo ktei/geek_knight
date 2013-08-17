@@ -45,23 +45,24 @@
 @import "mixins";
 
 body {
-  background-color:#000;
+  background-color:$panel-bg;
   background-repeat: no-repeat;
   background-position: -150px 0%;
-  background-image:url('../../assets/img/bg.jpg');
 }
 
 footer {
   background-color:$primary-color;
   padding: 15px;
   color: #fff;
+  @include box-shadow(rgba(0, 0, 0, 0.15) 0 0 20px 0);
 }
 
-.top-bar { 
+.top-bar {
+  @include box-shadow(rgba(0, 0, 0, 0.15) 0 0 20px 0); 
   .title-area {
     h1 > a {
       color: #fff;
-      &:hover { color: #000; }
+      &:hover { color: #E74C3C; }
     }
   }
   .top-bar-section > ul {
@@ -75,8 +76,7 @@ footer {
 #container {
   padding: 15px;
   background-color:#fff;
-  border:none;
-  opacity: 0.95;
+  @include box-shadow(rgba(0, 0, 0, 0.15) 0 0 20px 0);
   min-height: 650px;
 }
 
@@ -85,6 +85,7 @@ footer {
 }
 
 .alert-box {
+  border:none;
   &.notice {
     background-color:$notice-color;
   }
